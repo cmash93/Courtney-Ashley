@@ -1,103 +1,51 @@
-import React, { useState, useRef } from "react";
+import React from 'react';
+import { Container, Row, Col, Card, CardText } from 'reactstrap';
+import './Contact.css';
 
-// Styles
-import "./contact.css";
-
-// Email Js
-import emailjs from "emailjs-com";
-
-// image
-import shakeImage from "../../images/shake.svg";
-
-// Components
-import { Heading } from "../Heading/Heading";
-import Button from "components/Button/Button";
-
-const Contact = () => {
-    const INITIAL_VALUES = { email: "", message: "" };
-    const [notification, setNotification] = useState(false);
-    const [values, setValues] = useState(INITIAL_VALUES);
-    const [loading, setLoading] = useState(false);
-
-    // Email-js
-    const form = useRef();
-
-    const sendEmail = async () => {
-        try {
-            const result = await emailjs.sendForm(
-                `gmail`,
-                `emailjs`,
-                form.current,
-                `user_Ar1zI6cvC6aUG82I1aNsA`
-            );
-            console.log("result ", result.text);
-        } catch (error) {
-            console.log("ERROR", error);
-        }
-    };
-    // Email-js
-
-    const clearForm = () => {
-        setValues(INITIAL_VALUES);
-    };
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        // console.log("form submitted !", values);
-        // TODO : Send data to your email
-        setLoading(true);
-        await sendEmail();
-        setLoading(false);
-        clearForm();
-        setNotification(true);
-    };
-
-    const handleChange = (event) => {
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value,
-        });
-    };
-
+function Contact() {
     return (
-        <section className="contact" name="contact" id="contact">
-            <Heading text="Contact" style={{ marginBottom: "3rem" }} />
-            <div className="content">
-                <div className="left">
-                    <img src={shakeImage} alt="shake hands" />
-                </div>
-                <div className="right">
-                    <form onSubmit={handleSubmit} ref={form}>
-                        <input
-                            type="email"
-                            name="email"
-                            value={values.email}
-                            onChange={handleChange}
-                            placeholder="Email"
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            required
-                            value={values.message}
-                            onChange={handleChange}
-                            placeholder="Message"
-                        ></textarea>
-                        <Button
-                            text={loading ? "Sending..." : "Send"}
-                            loading={loading}
-                            type="submit"
-                        />
-                        {notification && (
-                            <span style={{ color: "green", marginTop: "1rem" }}>
-                                Thanks, I will reply ASAP :)
-                            </span>
-                        )}
-                    </form>
-                </div>
-            </div>
+        <section id="contact-section">
+            <Container>
+                <Row className="title-rows">
+                    <Col><h2 className="section-titles"><span id="contact-pipe" className="title-pipes">|</span> Contact</h2></Col>
+                </Row>
+                <Row>
+                    <Col xs="6" sm="3">
+                        <Card body className="text-center contact-cards shadow-sm hvr-underline-from-center2">
+                            <a href="mailto:estherjmin@gmail.com">
+                            <i className="fa fa-envelope " aria-hidden="true"></i>
+                            <CardText className="">Email</CardText>
+                            </a>
+                        </Card>
+                    </Col>
+                    <Col xs="6" sm="3">
+                        <Card body className="text-center contact-cards shadow-sm hvr-underline-from-center2">
+                            <a href="tel:1-267-679-0661"> 
+                            <i className="fa fa-phone" aria-hidden="true"></i>
+                            <CardText>267-679-0661</CardText>
+                            </a>
+                        </Card>
+                    </Col>
+                    <Col xs="6" sm="3">
+                        <Card body className="text-center contact-cards shadow-sm hvr-underline-from-center2">
+                            <a href="https://github.com/jungjungie" target="_blank" rel="noopener noreferrer">
+                            <i className="fa fa-github " aria-hidden="true"></i>
+                            <CardText>GitHub</CardText>
+                            </a>
+                        </Card>
+                    </Col>
+                    <Col xs="6" sm="3">
+                        <Card body className="text-center contact-cards shadow-sm hvr-underline-from-center2">
+                            <a href="https://www.linkedin.com/in/esther-j-min/" target="_blank" rel="noopener noreferrer">
+                            <i className="fa fa-linkedin-square " aria-hidden="true"></i>
+                            <CardText>LinkedIn</CardText>
+                            </a>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
         </section>
-    );
-};
+    )
+}
 
 export default Contact;
