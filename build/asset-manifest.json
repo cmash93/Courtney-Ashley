@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Courtney-Ashley/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/Courtney-Ashley/static/js/main.afe950a9.chunk.js",
+    "main.js.map": "/Courtney-Ashley/static/js/main.afe950a9.chunk.js.map",
+    "runtime-main.js": "/Courtney-Ashley/static/js/runtime-main.0ad630dd.js",
+    "runtime-main.js.map": "/Courtney-Ashley/static/js/runtime-main.0ad630dd.js.map",
+    "static/css/2.80f479d8.chunk.css": "/Courtney-Ashley/static/css/2.80f479d8.chunk.css",
+    "static/js/2.a785698c.chunk.js": "/Courtney-Ashley/static/js/2.a785698c.chunk.js",
+    "static/js/2.a785698c.chunk.js.map": "/Courtney-Ashley/static/js/2.a785698c.chunk.js.map",
+    "index.html": "/Courtney-Ashley/index.html",
+    "precache-manifest.f433a4e2ccaadd1f91251510162f3abc.js": "/Courtney-Ashley/precache-manifest.f433a4e2ccaadd1f91251510162f3abc.js",
+    "service-worker.js": "/Courtney-Ashley/service-worker.js",
+    "static/css/2.80f479d8.chunk.css.map": "/Courtney-Ashley/static/css/2.80f479d8.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/Courtney-Ashley/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.a785698c.chunk.js.LICENSE.txt": "/Courtney-Ashley/static/js/2.a785698c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0ad630dd.js",
+    "static/css/2.80f479d8.chunk.css",
+    "static/js/2.a785698c.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.afe950a9.chunk.js"
+  ]
+}
